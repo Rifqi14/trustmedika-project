@@ -16,3 +16,26 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('employee')->name('employee')->group(function () {
+        Route::get('/', function () {
+            return view('employee');
+        })->name('');
+        Route::get('/create', function () {
+            return view('pages/employee/create');
+        })->name('.create');
+    });
+    Route::get('/poli', function () {
+        echo 'Hai Klinik';
+    })->name('poli');
+    Route::get('/report', function () {
+        echo 'Hai Laporan';
+    })->name('report');
+});
+
+require __DIR__ . '/auth.php';
