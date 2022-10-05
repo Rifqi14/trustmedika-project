@@ -18,11 +18,11 @@
                     <x-nav-link :href="route('employee')" :active="request()->routeIs('employee')">
                         {{ __('employee.employee') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('poli')" :active="request()->routeIs('poli')">
-                        {{ __('Dashboard') }}
+                    <x-nav-link :href="route('clinic')" :active="request()->routeIs('clinic')">
+                        Clinic
                     </x-nav-link>
-                    <x-nav-link :href="route('report')" :active="request()->routeIs('report')">
-                        {{ __('Dashboard') }}
+                    <x-nav-link :href="route('schedule')" :active="request()->routeIs('schedule')">
+                        Schedule
                     </x-nav-link>
                 </div>
             </div>
